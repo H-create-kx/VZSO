@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_7aac3734d2bc66a728550499474d2512 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+<div style="
+    position: fixed;
+    top: 50px;
+    right: 50px;
+    width: 200px;
+    background-color: white;
+    padding: 10px;
+    border: 2px solid black;
+    z-index: 9999;
+    font-size: 14px;
+">
+    <b>SUK 3</b><br>
+    <i style='background:orange;width:10px;height:10px;display:inline-block;margin-right:5px;'></i> Querschnittszählung<br>
+    <i style='background:pink;width:10px;height:10px;display:inline-block;margin-right:5px;'></i> Knotenstromzählung<br>
+    <i style='background:blue;width:10px;height:10px;display:inline-block;margin-right:5px;'></i> Velozählstelle
+</div>
+    
+            <div class="folium-map" id="map_7aac3734d2bc66a728550499474d2512" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_7aac3734d2bc66a728550499474d2512 = L.map(
+                "map_7aac3734d2bc66a728550499474d2512",
+                {
+                    center: [47.4491049375, 7.5896954999999995],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 12,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_90f94d0bbda53d70664140ec5199f2ec = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca target=\"_blank\" href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca target=\"_blank\" href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_7aac3734d2bc66a728550499474d2512);
+        
+    
+            var marker_0f3b4cbe7fcbe41804451982fdaf1263 = L.marker(
+                [47.449753, 7.666725],
+                {}
+            ).addTo(map_7aac3734d2bc66a728550499474d2512);
+        
+    
+            var icon_39c5f532f685280837ac5477d5c89d1b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "graduation-cap", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_0f3b4cbe7fcbe41804451982fdaf1263.setIcon(icon_39c5f532f685280837ac5477d5c89d1b);
+        
+    
+        var popup_87c279654dd9eaba9620c3bb735a152f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a3cc81a47cc3c8c651b8d816006dbaee = $(`<div id="html_a3cc81a47cc3c8c651b8d816006dbaee" style="width: 100.0%; height: 100.0%;">Büren<br>Schüler: 75</div>`)[0];
+                popup_87c279654dd9eaba9620c3bb735a152f.setContent(html_a3cc81a47cc3c8c651b8d816006dbaee);
+            
+        
+
+        marker_0f3b4cbe7fcbe41804451982fdaf1263.bindPopup(popup_87c279654dd9eaba9620c3bb735a152f)
+        ;
+
+        
+    
+    
+            marker_0f3b4cbe7fcbe41804451982fdaf1263.bindTooltip(
+                `<div>
+                     Büren
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_9bd3e5e51de08f8b28022c2c2da18223 = L.marker(
+                [47.390747, 7.593846],
+                {}
+            ).addTo(map_7aac3734d2bc66a728550499474d2512);
+        
+    
+            var icon_0843718c7bf4ea3a13f36a735325b5b2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "graduation-cap", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_9bd3e5e51de08f8b28022c2c2da18223.setIcon(icon_0843718c7bf4ea3a13f36a735325b5b2);
+        
+    
+        var popup_f6403f6c385f15076f40fa90db2441e6 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_5d37bba72418b3e0b6347e54ccdc5775 = $(`<div id="html_5d37bba72418b3e0b6347e54ccdc5775" style="width: 100.0%; height: 100.0%;">Meltingen<br>Schüler: 40</div>`)[0];
+                popup_f6403f6c385f15076f40fa90db2441e6.setContent(html_5d37bba72418b3e0b6347e54ccdc5775);
+            
+        
+
+        marker_9bd3e5e51de08f8b28022c2c2da18223.bindPopup(popup_f6403f6c385f15076f40fa90db2441e6)
+        ;
+
+        
+    
+    
+            marker_9bd3e5e51de08f8b28022c2c2da18223.bindTooltip(
+                `<div>
+                     Meltingen
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_f80a13b568914a5ca7773adcde757ca2 = L.marker(
+                [47.489891, 7.501131],
+                {}
+            ).addTo(map_7aac3734d2bc66a728550499474d2512);
+        
+    
+            var icon_2c5c6358b912f702f35b67a420aeaad5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "graduation-cap", "iconColor": "white", "markerColor": "red", "prefix": "fa"}
+            );
+            marker_f80a13b568914a5ca7773adcde757ca2.setIcon(icon_2c5c6358b912f702f35b67a420aeaad5);
+        
+    
+        var popup_44c49109e7f2eb882cfa615069ea92f1 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_44c65fc7577847d1a5a830a1b24b1ff5 = $(`<div id="html_44c65fc7577847d1a5a830a1b24b1ff5" style="width: 100.0%; height: 100.0%;">Bättwil<br>Schüler: 44</div>`)[0];
+                popup_44c49109e7f2eb882cfa615069ea92f1.setContent(html_44c65fc7577847d1a5a830a1b24b1ff5);
+            
+        
+
+        marker_f80a13b568914a5ca7773adcde757ca2.bindPopup(popup_44c49109e7f2eb882cfa615069ea92f1)
+        ;
+
+        
+    
+    
+            marker_f80a13b568914a5ca7773adcde757ca2.bindTooltip(
+                `<div>
+                     Bättwil
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_6252f46bfc27431c500ff7a06a514886 = L.marker(
+                [47.423156, 7.583301],
+                {}
+            ).addTo(map_7aac3734d2bc66a728550499474d2512);
+        
+    
+            var icon_9e96cd5866f5a047a0226bbabc89a461 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_6252f46bfc27431c500ff7a06a514886.setIcon(icon_9e96cd5866f5a047a0226bbabc89a461);
+        
+    
+        var popup_c3ad0e86dce2cb8488fdcec44d48d8d0 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f1b873be6b1efa9a0d678cc14b64fb25 = $(`<div id="html_f1b873be6b1efa9a0d678cc14b64fb25" style="width: 100.0%; height: 100.0%;">Zählstelle(n):<br>305</div>`)[0];
+                popup_c3ad0e86dce2cb8488fdcec44d48d8d0.setContent(html_f1b873be6b1efa9a0d678cc14b64fb25);
+            
+        
+
+        marker_6252f46bfc27431c500ff7a06a514886.bindPopup(popup_c3ad0e86dce2cb8488fdcec44d48d8d0)
+        ;
+
+        
+    
+    
+            marker_6252f46bfc27431c500ff7a06a514886.bindTooltip(
+                `<div>
+                     1 Zählstellen
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_332a2245b49564a546a18409f013ade9 = L.marker(
+                [47.423156, 7.584301],
+                {}
+            ).addTo(map_7aac3734d2bc66a728550499474d2512);
+        
+    
+            var div_icon_cad0729051dd5b005c4a230d5cd74b74 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 8pt; color: black; background-color: white; padding: 5px; border-radius: 5px; white-space: nowrap; display: inline-block;\"\u003e305\u003c/div\u003e"});
+            marker_332a2245b49564a546a18409f013ade9.setIcon(div_icon_cad0729051dd5b005c4a230d5cd74b74);
+        
+    
+            var marker_8db7bf301b8cf3354b190bd89c8e3ea8 = L.marker(
+                [47.43152, 7.639257],
+                {}
+            ).addTo(map_7aac3734d2bc66a728550499474d2512);
+        
+    
+            var icon_811aea15f58ac1c9b9e4988774b14ec2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_8db7bf301b8cf3354b190bd89c8e3ea8.setIcon(icon_811aea15f58ac1c9b9e4988774b14ec2);
+        
+    
+        var popup_462f618fbfa69ec1a3dd030f86e1b9f1 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_69bfd6c7b7bb8e1a453a4c82eb981db1 = $(`<div id="html_69bfd6c7b7bb8e1a453a4c82eb981db1" style="width: 100.0%; height: 100.0%;">Zählstelle(n):<br>307</div>`)[0];
+                popup_462f618fbfa69ec1a3dd030f86e1b9f1.setContent(html_69bfd6c7b7bb8e1a453a4c82eb981db1);
+            
+        
+
+        marker_8db7bf301b8cf3354b190bd89c8e3ea8.bindPopup(popup_462f618fbfa69ec1a3dd030f86e1b9f1)
+        ;
+
+        
+    
+    
+            marker_8db7bf301b8cf3354b190bd89c8e3ea8.bindTooltip(
+                `<div>
+                     1 Zählstellen
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_df228e25223acc4130b7895cb916acfb = L.marker(
+                [47.43152, 7.640257],
+                {}
+            ).addTo(map_7aac3734d2bc66a728550499474d2512);
+        
+    
+            var div_icon_030f1892c39ed035dd75cf6dd7fe397b = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 8pt; color: black; background-color: white; padding: 5px; border-radius: 5px; white-space: nowrap; display: inline-block;\"\u003e307\u003c/div\u003e"});
+            marker_df228e25223acc4130b7895cb916acfb.setIcon(div_icon_030f1892c39ed035dd75cf6dd7fe397b);
+        
+    
+            var marker_71772b5f12f58b1666fbc539a87e36c5 = L.marker(
+                [47.429701, 7.6625],
+                {}
+            ).addTo(map_7aac3734d2bc66a728550499474d2512);
+        
+    
+            var icon_b34e98f37d6e894bab474086aa75fb56 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_71772b5f12f58b1666fbc539a87e36c5.setIcon(icon_b34e98f37d6e894bab474086aa75fb56);
+        
+    
+        var popup_a6140d9ba75f35025642672bb71ba83b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_abe0bd919e770e6e22e31211d93aeee9 = $(`<div id="html_abe0bd919e770e6e22e31211d93aeee9" style="width: 100.0%; height: 100.0%;">Zählstelle(n):<br>308</div>`)[0];
+                popup_a6140d9ba75f35025642672bb71ba83b.setContent(html_abe0bd919e770e6e22e31211d93aeee9);
+            
+        
+
+        marker_71772b5f12f58b1666fbc539a87e36c5.bindPopup(popup_a6140d9ba75f35025642672bb71ba83b)
+        ;
+
+        
+    
+    
+            marker_71772b5f12f58b1666fbc539a87e36c5.bindTooltip(
+                `<div>
+                     1 Zählstellen
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_e19c3cf0829a5e6ddbaf400369fbf23c = L.marker(
+                [47.429701, 7.6635],
+                {}
+            ).addTo(map_7aac3734d2bc66a728550499474d2512);
+        
+    
+            var div_icon_0c5fa814bea32eedfeb69e211caa5c58 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 8pt; color: black; background-color: white; padding: 5px; border-radius: 5px; white-space: nowrap; display: inline-block;\"\u003e308\u003c/div\u003e"});
+            marker_e19c3cf0829a5e6ddbaf400369fbf23c.setIcon(div_icon_0c5fa814bea32eedfeb69e211caa5c58);
+        
+    
+            var marker_441aa06a0df6584d779468bfcefd3eaf = L.marker(
+                [47.453218, 7.639113],
+                {}
+            ).addTo(map_7aac3734d2bc66a728550499474d2512);
+        
+    
+            var icon_64782047a95aafc95cd770ae73d2c074 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_441aa06a0df6584d779468bfcefd3eaf.setIcon(icon_64782047a95aafc95cd770ae73d2c074);
+        
+    
+        var popup_ccb87a62ba762e76da5d5ea3566e5071 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a81fff6cde503e0426311cf65f429a24 = $(`<div id="html_a81fff6cde503e0426311cf65f429a24" style="width: 100.0%; height: 100.0%;">Zählstelle(n):<br>310</div>`)[0];
+                popup_ccb87a62ba762e76da5d5ea3566e5071.setContent(html_a81fff6cde503e0426311cf65f429a24);
+            
+        
+
+        marker_441aa06a0df6584d779468bfcefd3eaf.bindPopup(popup_ccb87a62ba762e76da5d5ea3566e5071)
+        ;
+
+        
+    
+    
+            marker_441aa06a0df6584d779468bfcefd3eaf.bindTooltip(
+                `<div>
+                     1 Zählstellen
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_6ad5e186b789f8ffe1fd941b2b0502f1 = L.marker(
+                [47.453218, 7.640113],
+                {}
+            ).addTo(map_7aac3734d2bc66a728550499474d2512);
+        
+    
+            var div_icon_06b969ee8079c1d0979f85b4f73cd811 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 8pt; color: black; background-color: white; padding: 5px; border-radius: 5px; white-space: nowrap; display: inline-block;\"\u003e310\u003c/div\u003e"});
+            marker_6ad5e186b789f8ffe1fd941b2b0502f1.setIcon(div_icon_06b969ee8079c1d0979f85b4f73cd811);
+        
+    
+            var marker_2c7e01332b2b49730c46eee899381db3 = L.marker(
+                [47.474189, 7.689323],
+                {}
+            ).addTo(map_7aac3734d2bc66a728550499474d2512);
+        
+    
+            var icon_3403e51683d12ef65439339dad207f9a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_2c7e01332b2b49730c46eee899381db3.setIcon(icon_3403e51683d12ef65439339dad207f9a);
+        
+    
+        var popup_94455d84561bcd0f07b5e2e3cdbd9bad = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_bd7ee1f3ce92510d205ca8f3cc4c6154 = $(`<div id="html_bd7ee1f3ce92510d205ca8f3cc4c6154" style="width: 100.0%; height: 100.0%;">Zählstelle(n):<br>311</div>`)[0];
+                popup_94455d84561bcd0f07b5e2e3cdbd9bad.setContent(html_bd7ee1f3ce92510d205ca8f3cc4c6154);
+            
+        
+
+        marker_2c7e01332b2b49730c46eee899381db3.bindPopup(popup_94455d84561bcd0f07b5e2e3cdbd9bad)
+        ;
+
+        
+    
+    
+            marker_2c7e01332b2b49730c46eee899381db3.bindTooltip(
+                `<div>
+                     1 Zählstellen
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_dd8e8fae101a5d810cb548413ef13d0b = L.marker(
+                [47.474189, 7.690323],
+                {}
+            ).addTo(map_7aac3734d2bc66a728550499474d2512);
+        
+    
+            var div_icon_2d71e245634a69e6e0ac3ad0f67a3d51 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 8pt; color: black; background-color: white; padding: 5px; border-radius: 5px; white-space: nowrap; display: inline-block;\"\u003e311\u003c/div\u003e"});
+            marker_dd8e8fae101a5d810cb548413ef13d0b.setIcon(div_icon_2d71e245634a69e6e0ac3ad0f67a3d51);
+        
+    
+            var marker_20e387b3a07291e172331902f78baa7d = L.marker(
+                [47.400667, 7.542246],
+                {}
+            ).addTo(map_7aac3734d2bc66a728550499474d2512);
+        
+    
+            var icon_6ea7856ba21b7fd6fdc0c42f81345fdc = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_20e387b3a07291e172331902f78baa7d.setIcon(icon_6ea7856ba21b7fd6fdc0c42f81345fdc);
+        
+    
+        var popup_2fb34295b057a79fe6fd64e3039c973e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_e63faef2871ed197379df56014627f23 = $(`<div id="html_e63faef2871ed197379df56014627f23" style="width: 100.0%; height: 100.0%;">Zählstelle(n):<br>314</div>`)[0];
+                popup_2fb34295b057a79fe6fd64e3039c973e.setContent(html_e63faef2871ed197379df56014627f23);
+            
+        
+
+        marker_20e387b3a07291e172331902f78baa7d.bindPopup(popup_2fb34295b057a79fe6fd64e3039c973e)
+        ;
+
+        
+    
+    
+            marker_20e387b3a07291e172331902f78baa7d.bindTooltip(
+                `<div>
+                     1 Zählstellen
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_6068a1e678f7d69e8c584d901685ea11 = L.marker(
+                [47.400667, 7.543246],
+                {}
+            ).addTo(map_7aac3734d2bc66a728550499474d2512);
+        
+    
+            var div_icon_9f79834c48b6995138e256bf69bb75e5 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 8pt; color: black; background-color: white; padding: 5px; border-radius: 5px; white-space: nowrap; display: inline-block;\"\u003e314\u003c/div\u003e"});
+            marker_6068a1e678f7d69e8c584d901685ea11.setIcon(div_icon_9f79834c48b6995138e256bf69bb75e5);
+        
+    
+            var marker_ab0175da1b980fc649167086cb137e27 = L.marker(
+                [47.392093, 7.596958],
+                {}
+            ).addTo(map_7aac3734d2bc66a728550499474d2512);
+        
+    
+            var icon_cdcef2d4f492ce155228f30a0ec3948a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_ab0175da1b980fc649167086cb137e27.setIcon(icon_cdcef2d4f492ce155228f30a0ec3948a);
+        
+    
+        var popup_15a9c2b159abaa9b5ff80c6fe9ab760d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_ddf75105db296bb2c03c082d5954ca0d = $(`<div id="html_ddf75105db296bb2c03c082d5954ca0d" style="width: 100.0%; height: 100.0%;">Zählstelle(n):<br>316</div>`)[0];
+                popup_15a9c2b159abaa9b5ff80c6fe9ab760d.setContent(html_ddf75105db296bb2c03c082d5954ca0d);
+            
+        
+
+        marker_ab0175da1b980fc649167086cb137e27.bindPopup(popup_15a9c2b159abaa9b5ff80c6fe9ab760d)
+        ;
+
+        
+    
+    
+            marker_ab0175da1b980fc649167086cb137e27.bindTooltip(
+                `<div>
+                     1 Zählstellen
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_b15fb27287582f0440849aa0e7817cc8 = L.marker(
+                [47.392093, 7.597958],
+                {}
+            ).addTo(map_7aac3734d2bc66a728550499474d2512);
+        
+    
+            var div_icon_8cd3e6217a53747984cee977863d4fbb = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 8pt; color: black; background-color: white; padding: 5px; border-radius: 5px; white-space: nowrap; display: inline-block;\"\u003e316\u003c/div\u003e"});
+            marker_b15fb27287582f0440849aa0e7817cc8.setIcon(div_icon_8cd3e6217a53747984cee977863d4fbb);
+        
+    
+            var marker_bad1e7cb49cd1eb4ad23d24a22311982 = L.marker(
+                [47.449363, 7.677949],
+                {}
+            ).addTo(map_7aac3734d2bc66a728550499474d2512);
+        
+    
+            var icon_eb55eb9d904cd4ab44bf3a706dfb9af0 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_bad1e7cb49cd1eb4ad23d24a22311982.setIcon(icon_eb55eb9d904cd4ab44bf3a706dfb9af0);
+        
+    
+        var popup_06528fb30ae5761ea7dd043679cda504 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_ba8bef1afd5a48810aa945cc5252ff80 = $(`<div id="html_ba8bef1afd5a48810aa945cc5252ff80" style="width: 100.0%; height: 100.0%;">Zählstelle(n):<br>317</div>`)[0];
+                popup_06528fb30ae5761ea7dd043679cda504.setContent(html_ba8bef1afd5a48810aa945cc5252ff80);
+            
+        
+
+        marker_bad1e7cb49cd1eb4ad23d24a22311982.bindPopup(popup_06528fb30ae5761ea7dd043679cda504)
+        ;
+
+        
+    
+    
+            marker_bad1e7cb49cd1eb4ad23d24a22311982.bindTooltip(
+                `<div>
+                     1 Zählstellen
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_36efbd8bc8376db1984cf35b132e8d12 = L.marker(
+                [47.449363, 7.678949],
+                {}
+            ).addTo(map_7aac3734d2bc66a728550499474d2512);
+        
+    
+            var div_icon_7d0a99b93747a53969b4d6fc1cd114bf = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 8pt; color: black; background-color: white; padding: 5px; border-radius: 5px; white-space: nowrap; display: inline-block;\"\u003e317\u003c/div\u003e"});
+            marker_36efbd8bc8376db1984cf35b132e8d12.setIcon(div_icon_7d0a99b93747a53969b4d6fc1cd114bf);
+        
+    
+            var marker_2cbf2431a0ca29960ad59215bf91d217 = L.marker(
+                [47.407351, 7.537909],
+                {}
+            ).addTo(map_7aac3734d2bc66a728550499474d2512);
+        
+    
+            var icon_5110634f52a106d633d3f62ceccfb2c9 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_2cbf2431a0ca29960ad59215bf91d217.setIcon(icon_5110634f52a106d633d3f62ceccfb2c9);
+        
+    
+        var popup_939f3ea0ab453e2591828df7e10bfec2 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_1fc3c3e10e67ac8ef605f3574493c001 = $(`<div id="html_1fc3c3e10e67ac8ef605f3574493c001" style="width: 100.0%; height: 100.0%;">Zählstelle(n):<br>321</div>`)[0];
+                popup_939f3ea0ab453e2591828df7e10bfec2.setContent(html_1fc3c3e10e67ac8ef605f3574493c001);
+            
+        
+
+        marker_2cbf2431a0ca29960ad59215bf91d217.bindPopup(popup_939f3ea0ab453e2591828df7e10bfec2)
+        ;
+
+        
+    
+    
+            marker_2cbf2431a0ca29960ad59215bf91d217.bindTooltip(
+                `<div>
+                     1 Zählstellen
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_cf3cd37519b0e5fa2b20ffe38d813fda = L.marker(
+                [47.407351, 7.538909],
+                {}
+            ).addTo(map_7aac3734d2bc66a728550499474d2512);
+        
+    
+            var div_icon_1fbf116e1c2bf831e1d8dcff6d6878fe = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 8pt; color: black; background-color: white; padding: 5px; border-radius: 5px; white-space: nowrap; display: inline-block;\"\u003e321\u003c/div\u003e"});
+            marker_cf3cd37519b0e5fa2b20ffe38d813fda.setIcon(div_icon_1fbf116e1c2bf831e1d8dcff6d6878fe);
+        
+    
+            var marker_4b091499c272dd8b7dc7324923977a6d = L.marker(
+                [47.492453, 7.520013],
+                {}
+            ).addTo(map_7aac3734d2bc66a728550499474d2512);
+        
+    
+            var icon_402169bb34af8f7228fe226b2d3efdc1 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_4b091499c272dd8b7dc7324923977a6d.setIcon(icon_402169bb34af8f7228fe226b2d3efdc1);
+        
+    
+        var popup_52489689ba781fc4c42b21b24a053f53 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f1d8a26ca3cd9dce4a453653f429959d = $(`<div id="html_f1d8a26ca3cd9dce4a453653f429959d" style="width: 100.0%; height: 100.0%;">Zählstelle(n):<br>327</div>`)[0];
+                popup_52489689ba781fc4c42b21b24a053f53.setContent(html_f1d8a26ca3cd9dce4a453653f429959d);
+            
+        
+
+        marker_4b091499c272dd8b7dc7324923977a6d.bindPopup(popup_52489689ba781fc4c42b21b24a053f53)
+        ;
+
+        
+    
+    
+            marker_4b091499c272dd8b7dc7324923977a6d.bindTooltip(
+                `<div>
+                     1 Zählstellen
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_430351215556abef530dd76864e489f8 = L.marker(
+                [47.492453, 7.521013],
+                {}
+            ).addTo(map_7aac3734d2bc66a728550499474d2512);
+        
+    
+            var div_icon_4148cb3145016282622702f24cf9e21f = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 8pt; color: black; background-color: white; padding: 5px; border-radius: 5px; white-space: nowrap; display: inline-block;\"\u003e327\u003c/div\u003e"});
+            marker_430351215556abef530dd76864e489f8.setIcon(div_icon_4148cb3145016282622702f24cf9e21f);
+        
+    
+            var marker_b28a553496e5e4a5a574b4b1181dfa26 = L.marker(
+                [47.393679, 7.534235],
+                {}
+            ).addTo(map_7aac3734d2bc66a728550499474d2512);
+        
+    
+            var icon_ef828960cfbfa324dca5b6e51bebd9bf = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "orange", "prefix": "glyphicon"}
+            );
+            marker_b28a553496e5e4a5a574b4b1181dfa26.setIcon(icon_ef828960cfbfa324dca5b6e51bebd9bf);
+        
+    
+        var popup_dcc0768a5fc2fb276b4c6547e1740f17 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_12a46ffbb967608a361f68e187a03b37 = $(`<div id="html_12a46ffbb967608a361f68e187a03b37" style="width: 100.0%; height: 100.0%;">Zählstelle(n):<br>331</div>`)[0];
+                popup_dcc0768a5fc2fb276b4c6547e1740f17.setContent(html_12a46ffbb967608a361f68e187a03b37);
+            
+        
+
+        marker_b28a553496e5e4a5a574b4b1181dfa26.bindPopup(popup_dcc0768a5fc2fb276b4c6547e1740f17)
+        ;
+
+        
+    
+    
+            marker_b28a553496e5e4a5a574b4b1181dfa26.bindTooltip(
+                `<div>
+                     1 Zählstellen
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_00398192fe423411547c59af66aa2bc8 = L.marker(
+                [47.393679, 7.535235],
+                {}
+            ).addTo(map_7aac3734d2bc66a728550499474d2512);
+        
+    
+            var div_icon_3a7d045a95bf15f8d3abf04e49d5864f = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 8pt; color: black; background-color: white; padding: 5px; border-radius: 5px; white-space: nowrap; display: inline-block;\"\u003e331\u003c/div\u003e"});
+            marker_00398192fe423411547c59af66aa2bc8.setIcon(div_icon_3a7d045a95bf15f8d3abf04e49d5864f);
+        
+    
+            var marker_0db8fb3ac728e293620f6c9cbac0fc43 = L.marker(
+                [47.486772, 7.610864],
+                {}
+            ).addTo(map_7aac3734d2bc66a728550499474d2512);
+        
+    
+            var icon_cfbf9297e6b05a566dbc1a4ff8d66ac5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "pink", "prefix": "glyphicon"}
+            );
+            marker_0db8fb3ac728e293620f6c9cbac0fc43.setIcon(icon_cfbf9297e6b05a566dbc1a4ff8d66ac5);
+        
+    
+        var popup_ef508db2ccc0be12dbb91aa74d374354 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_79f93078452fa789af409e82915cdf29 = $(`<div id="html_79f93078452fa789af409e82915cdf29" style="width: 100.0%; height: 100.0%;">Zählstelle(n):<br>329-B<br>329-A<br>329-C</div>`)[0];
+                popup_ef508db2ccc0be12dbb91aa74d374354.setContent(html_79f93078452fa789af409e82915cdf29);
+            
+        
+
+        marker_0db8fb3ac728e293620f6c9cbac0fc43.bindPopup(popup_ef508db2ccc0be12dbb91aa74d374354)
+        ;
+
+        
+    
+    
+            marker_0db8fb3ac728e293620f6c9cbac0fc43.bindTooltip(
+                `<div>
+                     3 Zählstellen
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_1cf706c75ea796530851b06329a1037e = L.marker(
+                [47.486772, 7.611864000000001],
+                {}
+            ).addTo(map_7aac3734d2bc66a728550499474d2512);
+        
+    
+            var div_icon_90d87a6b70e54e897ebfa19009e68231 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 8pt; color: black; background-color: white; padding: 5px; border-radius: 5px; white-space: nowrap; display: inline-block;\"\u003e329-B\u003cbr\u003e329-A\u003cbr\u003e329-C\u003c/div\u003e"});
+            marker_1cf706c75ea796530851b06329a1037e.setIcon(div_icon_90d87a6b70e54e897ebfa19009e68231);
+        
+    
+            var marker_95259a00b5d55e7b359ee921bb1006c0 = L.marker(
+                [47.493486, 7.517951],
+                {}
+            ).addTo(map_7aac3734d2bc66a728550499474d2512);
+        
+    
+            var icon_3fa447085738d042b10a2027bfa98edc = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_95259a00b5d55e7b359ee921bb1006c0.setIcon(icon_3fa447085738d042b10a2027bfa98edc);
+        
+    
+        var popup_f263590da9ee8e51ec149c0ee673be8e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_dd0a5532ef7b344de3461d838f1cba50 = $(`<div id="html_dd0a5532ef7b344de3461d838f1cba50" style="width: 100.0%; height: 100.0%;">Zählstelle(n):<br>1300</div>`)[0];
+                popup_f263590da9ee8e51ec149c0ee673be8e.setContent(html_dd0a5532ef7b344de3461d838f1cba50);
+            
+        
+
+        marker_95259a00b5d55e7b359ee921bb1006c0.bindPopup(popup_f263590da9ee8e51ec149c0ee673be8e)
+        ;
+
+        
+    
+    
+            marker_95259a00b5d55e7b359ee921bb1006c0.bindTooltip(
+                `<div>
+                     1 Zählstellen
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_24d768ef559d8892b587879d76e5bd02 = L.marker(
+                [47.493486, 7.518951],
+                {}
+            ).addTo(map_7aac3734d2bc66a728550499474d2512);
+        
+    
+            var div_icon_55a98d64f25014109026872d765909c8 = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 8pt; color: black; background-color: white; padding: 5px; border-radius: 5px; white-space: nowrap; display: inline-block;\"\u003e1300\u003c/div\u003e"});
+            marker_24d768ef559d8892b587879d76e5bd02.setIcon(div_icon_55a98d64f25014109026872d765909c8);
+        
+    
+            var marker_21c8c69ba9070b3566b64c1207a2330f = L.marker(
+                [47.484487, 7.461781],
+                {}
+            ).addTo(map_7aac3734d2bc66a728550499474d2512);
+        
+    
+            var icon_5d5d46f57eacb10884413479f67344ca = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_21c8c69ba9070b3566b64c1207a2330f.setIcon(icon_5d5d46f57eacb10884413479f67344ca);
+        
+    
+        var popup_d53457f396c3cbbb2495f45bfb72f20d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_85afe893038779b64ec4afe3b4908328 = $(`<div id="html_85afe893038779b64ec4afe3b4908328" style="width: 100.0%; height: 100.0%;">Zählstelle(n):<br>1301</div>`)[0];
+                popup_d53457f396c3cbbb2495f45bfb72f20d.setContent(html_85afe893038779b64ec4afe3b4908328);
+            
+        
+
+        marker_21c8c69ba9070b3566b64c1207a2330f.bindPopup(popup_d53457f396c3cbbb2495f45bfb72f20d)
+        ;
+
+        
+    
+    
+            marker_21c8c69ba9070b3566b64c1207a2330f.bindTooltip(
+                `<div>
+                     1 Zählstellen
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var marker_3e8f45ba43d1ddcb8dcb10b4f60b2b13 = L.marker(
+                [47.484487, 7.4627810000000006],
+                {}
+            ).addTo(map_7aac3734d2bc66a728550499474d2512);
+        
+    
+            var div_icon_5f0746b41e3d73232a06fed7fb84613e = L.divIcon({"className": "empty", "html": "\u003cdiv style=\"font-size: 8pt; color: black; background-color: white; padding: 5px; border-radius: 5px; white-space: nowrap; display: inline-block;\"\u003e1301\u003c/div\u003e"});
+            marker_3e8f45ba43d1ddcb8dcb10b4f60b2b13.setIcon(div_icon_5f0746b41e3d73232a06fed7fb84613e);
+        
+</script>
+</html>
